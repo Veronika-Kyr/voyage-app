@@ -1,0 +1,41 @@
+.wrapper {
+    display: grid;
+    width: 150px;
+    margin: 200px auto;
+}
+
+.currentTempreture {
+    font-size: 65px;
+    display: inline-block;
+    line-height: 10px;
+}
+
+.iconCurrent {
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
+    margin-right: 15px;
+    /* display: inline;*/
+}
+
+.iconWeather {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.timer span {
+    color: white !important;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.caption {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.captionSection {
+    display: flex;
+    justify-content: space-between;
+}

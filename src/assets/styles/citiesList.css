@@ -1,0 +1,97 @@
+.citiesList {
+    /* display: flex;
+    justify-content: flex-start;
+    gap: 20px;*/
+}
+
+.errorStart,
+.errorEnd {
+    color: red;
+}
+
+.modalHeader {
+    padding-top: 12px;
+}
+
+.openModal {
+    width: 100px;
+    height: 80px;
+    border: none;
+}
+
+.openModal:hover {
+    cursor: grab;
+}
+
+.addTrip {
+    position: absolute;
+    top: 150px;
+    left: 500px;
+    background-color: rgb(248, 245, 245);
+    width: 550px;
+    height: 410px;
+}
+
+.closeButton {
+    border: none;
+    display: inline;
+    margin-left: 435px;
+    width: 10px;
+}
+
+.modalHead {
+    display: inline;
+    padding-left: 15px;
+    font-size: 12px;
+    letter-spacing: 0.9px;
+}
+
+hr {
+    margin-top: 12px;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.star {
+    color: red;
+}
+
+label {
+    display: block;
+    margin-left: 15px;
+}
+
+input {
+    margin: 8px 20px;
+    padding: 8px 5px;
+    border-radius: 5px;
+    width: 510px;
+}
+
+.modalFooter {
+    margin-top: 50px;
+}
+
+.btnReset,
+.btnSubmit {
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 3px;
+    width: 85px;
+}
+
+.btnReset:hover {
+    background-color: rgba(12, 40, 166, 0.767);
+    color: white;
+}
+
+.btnSubmit:hover {
+    background-color: rgba(12, 40, 166, 0.767);
+    color: white;
+}
+
+.btnReset {
+    margin-left: 350px;
+}

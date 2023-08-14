@@ -1,0 +1,23 @@
+.forecastCard {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.wrapForecast {
+    width: 80px;
+}
+
+.headForecast {
+    margin: 40px 0 40px 10px;
+    text-align: left;
+}
+
+.weekDays {
+    color: rgb(0, 0, 0, 0.5);
+}
+
+.icons {
+    width: 45px;
+    height: 45px;
+}

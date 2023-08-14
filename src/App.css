@@ -1,0 +1,11 @@
+.app {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh;
+  margin: 0px;
+}
+
+.cityPanel {
+  background: url("./assets/images/clouds.jpg") no-repeat center/100%;
+  color: white;
+}

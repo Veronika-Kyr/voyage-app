@@ -1,0 +1,64 @@
+.tripCard {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.openModal {
+    width: 200px;
+    height: 150px;
+    border: none;
+}
+
+
+img {
+    width: 200px;
+    height: 150px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 12px;
+}
+
+p {
+    font-size: 10px;
+}
+
+.cityCurrentWeather {
+    position: absolute;
+    top: 50px;
+    left: 1150px;
+    color: white;
+    font-size: 35px;
+}
+
+.activeWrap {
+    border: 2px solid rgb(19, 140, 240);
+}
+
+.arrow {
+    display: inline-block;
+    margin: 70px auto;
+
+    text-align: center;
+
+}
+
+.scrollBtn:hover {
+    color: blue;
+    cursor: grab;
+}
+
+.scrollBtn:disabled:hover {
+    color: rgb(180, 180, 186);
+    cursor: grab;
+}
+
+.scrollBtn {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 25px;
+}
