@@ -61,7 +61,6 @@ export default function CitiesList(props) {
     const [errorStart, setErrorStart] = useState(false);
     const [errorEnd, setErrorEnd] = useState(false);
     const period = new Date();
-    const periodDate = period.getDate() + 15;
 
     let cityData = [
         {
@@ -146,8 +145,10 @@ export default function CitiesList(props) {
 
     function handleStartDate(event) {
         let enterDate = new Date(event.target.value);
-        let enterPeriod = enterDate.getDate();
-        if (enterPeriod >= periodDate) {
+        const diff = Math.abs(enterDate - period);
+        const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+        if (diffDays >= 15) {
             setErrorStart(true);
         }
         else {
@@ -158,8 +159,9 @@ export default function CitiesList(props) {
 
     function handleEndDate(event) {
         let enterDate = new Date(event.target.value);
-        let enterPeriod = enterDate.getDate();
-        if (enterPeriod >= periodDate) {
+        const diff = Math.abs(enterDate - period);
+        const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        if (diffDays >= 15) {
             setErrorEnd(true);
         }
         else {

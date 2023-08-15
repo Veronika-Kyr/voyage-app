@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import MainPanel from './components/MainPanel';
 import UserLogin from './components/UserLogin';
-//import CityPanel from './components/CityPanel';
+
 
 function App() {
   return (

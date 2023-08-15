@@ -25,7 +25,7 @@ export default function MainPanel() {
                 </form>
             </div>
             <CitiesList searchingCity={cityTrip} />
-            {/*  <WeatherOfTrip /> */}
+
 
         </div>
     )
