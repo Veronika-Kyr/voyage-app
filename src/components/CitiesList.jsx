@@ -1,4 +1,4 @@
-import React, { createRef, useState } from "react";
+import React, { createRef, useState, useMemo } from "react";
 import '../assets/styles/citiesList.css';
 import CityCard from './CityCard';
 import card1 from "../assets/images/berlin.jpg";
@@ -46,7 +46,37 @@ const cities = [
         'refpic': `${card7}`,
         'id': 7
     }
-]
+];
+const cit = [
+    {
+        'cityName': 'Berlin',
+        'datestart': '2023-08-18',
+        'dateend': '2023-08-23',
+        'refpic': `${card1}`,
+        'id': 1
+    },
+    {
+        'cityName': 'Tokyo',
+        'datestart': '2023-08-19',
+        'dateend': '2023-08-26',
+        'refpic': `${card2}`,
+        'id': 2
+    },
+    {
+        'cityName': 'Barcelona',
+        'datestart': '2023-08-22',
+        'dateend': '2023-08-28',
+        'refpic': `${card3}`,
+        'id': 3
+    },
+    {
+        'cityName': 'Kyiv',
+        'datestart': '2023-08-18',
+        'dateend': '2023-08-25',
+        'refpic': `${card4}`,
+        'id': 4
+    },
+];
 
 
 export default function CitiesList(props) {
@@ -56,16 +86,15 @@ export default function CitiesList(props) {
     const [clickSubmit, setclickSubmit] = useState(false);
     const [scrolldisabled, setScrolldisabled] = useState(false);
     const [scrollLeftdisabled, setScrollLeftdisabled] = useState(false);
-
+    //  const [newAdded, setnewAdded] = useState(false);
     const form = createRef();
     const [errorStart, setErrorStart] = useState(false);
     const [errorEnd, setErrorEnd] = useState(false);
     const period = new Date();
-
-    let cityData = [
+    {/*  const cit = [
         {
             'cityName': 'Berlin',
-            'datestart': '2023-08-17',
+            'datestart': '2023-08-18',
             'dateend': '2023-08-23',
             'refpic': `${card1}`,
             'id': 1
@@ -91,9 +120,9 @@ export default function CitiesList(props) {
             'refpic': `${card4}`,
             'id': 4
         },
-
-    ]
-
+    ];*/}
+    let [cityData, setCityData] = useState(cit);
+    console.log(cityData);
 
     const [formState, setFormState] = useState({
         'cityName': '',
@@ -134,13 +163,7 @@ export default function CitiesList(props) {
     }
 
     function handleCity(event) {
-        let m = cities.filter(el => el.cityName === event.target.value);
         changeState(event.target.value, 'cityName');
-        changeState(m[0].refpic, 'refpic');
-        changeState(m[0].id, 'id');
-
-
-
     }
 
     function handleStartDate(event) {
@@ -174,12 +197,19 @@ export default function CitiesList(props) {
         if (!errorStart && !errorEnd) {
             event.preventDefault();
             setclickSubmit(true);
-            localStorage.setItem('cityName', formState.cityName);
-            localStorage.setItem('refpic', formState.refpic);
-            localStorage.setItem('id', formState.id);
-            localStorage.setItem('dateend', formState.dateend);
-            localStorage.setItem('datestart', formState.datestart);
-            cityData.push(formState);
+
+            // localStorage.setItem('cityName', formState.cityName);
+            //  localStorage.setItem('refpic', formState.refpic);
+            //  localStorage.setItem('id', formState.id);
+            // localStorage.setItem('dateend', formState.dateend);
+            // localStorage.setItem('datestart', formState.datestart);
+
+
+            let m = cities.filter(el => el.cityName === formState.cityName);
+            formState.refpic = m[0].refpic;
+            formState.id = m[0].id;
+            setCityData([...cityData, formState]);
+            console.log(cityData);
             closeModal();
         }
     }
@@ -223,13 +253,13 @@ export default function CitiesList(props) {
                         <div className="form-items"> <label htmlFor="cityName"><span className="star">*</span>  City </label>
                             <input id="cityName" list="cities" name='cities' onChange={handleCity} placeholder='Please select a city' />
                             <datalist id="cities">
-                                <option value={cities[0].cityName} />
-                                <option value={cities[1].cityName} />
-                                <option value={cities[2].cityName} />
-                                <option value={cities[3].cityName} />
-                                <option value={cities[4].cityName} />
-                                <option value={cities[5].cityName} />
-                                <option value={cities[6].cityName} />
+                                <option> {cities[0].cityName} </option>
+                                <option> {cities[1].cityName} </option>
+                                <option>{cities[2].cityName} </option>
+                                <option> {cities[3].cityName} </option>
+                                <option> {cities[4].cityName} </option>
+                                <option> {cities[5].cityName} </option>
+                                <option> {cities[6].cityName} </option>
 
                             </datalist>
                         </div>

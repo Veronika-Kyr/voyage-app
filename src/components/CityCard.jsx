@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WeatherOfTrip from './WeatherOfTrip';
 import CityPanel from './CityPanel';
 import '../assets/styles/mainPanel.css';
@@ -22,6 +22,9 @@ export default function CityCard(props) {
     CityPanel.defaultProps = {
         chosenCity: 'Berlin'
     };
+
+
+
 
 
     return (
