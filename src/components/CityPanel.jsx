@@ -27,8 +27,6 @@ import rainsnowshowersnight from '../assets/images/rain-snow-showers-night.png';
 import rainsnowshowersday from '../assets/images/rain-snow-showers-day.png';
 
 
-
-
 const icons = {
 
     'clear-day': `${clearday}`
@@ -84,13 +82,10 @@ export default function CityPanel(props) {
         "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
     ];
     const renderer = ({ days, hours, minutes, seconds }) => {
-
         return <div> <span> {zeroPad(days)}     {zeroPad(hours)}     {zeroPad(minutes)}    {zeroPad(seconds)}</span>
             <div className='captionSection'>  <p className='caption'>DAYS</p>  <p className='caption'>HOURS</p>  <p className='caption'>MINUTES</p>  <p className='caption'>SECONDS </p></div>
         </div>;
-
     };
-
 
     useEffect(() => {
         dispatch(fetchCurrentWeather(props.chosenCity));
@@ -99,24 +94,19 @@ export default function CityPanel(props) {
 
     return (
         <div className='cityWeather'>
-
             {current.fetchStatus === 'success' && <div className='wrapper'>
-
                 <div> {days[new Date(current.data.currentConditions.datetimeEpoch * 1000).getDay()]}</div>
                 <div className='iconWeather'>
                     <img className='iconCurrent' src={icons[current.data.currentConditions.icon]} alt='current state of sky conditions' />
                     <p className='currentTempreture'>{Math.round(current.data.currentConditions.temp)}℃</p>
                 </div>
                 <div>{current.data.address}  </div>
-
             </div>}
             <div className='timer'>
                 <Countdown date={new Date(props.chosenDateStart) + 10000} renderer={renderer} />
             </div>
-
         </div>
     )
-
 }
 
 

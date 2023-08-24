@@ -6,7 +6,6 @@ export default function UserLogin() {
     const [login, setLogin] = useState(false);
     const [picture, setPicture] = useState("");
     const [data, setData] = useState({});
-
     const responseFacebook = (response) => {
         console.log(response);
         if (response.status === "unknown") {
@@ -51,7 +50,6 @@ export default function UserLogin() {
                     }}
                 />
             )}
-
             {login && (
                 <div className="card">
                     <div className="card-body">

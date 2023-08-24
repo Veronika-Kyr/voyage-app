@@ -1,4 +1,3 @@
-// import WeatherCard from './WeatherCard';
 import React, { useEffect } from 'react';
 import { fetchForecast } from '../features/tripForecast/tripForecastSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,8 +24,6 @@ import rain from '../assets/images/rain.png';
 import rainsnow from '../assets/images/rain-snow.png';
 import rainsnowshowersnight from '../assets/images/rain-snow-showers-night.png';
 import rainsnowshowersday from '../assets/images/rain-snow-showers-day.png';
-
-
 
 
 const icons = {
@@ -98,7 +95,6 @@ const icons = {
 }
 
 
-
 export default function WeatherOfTrip(props) {
     const days = [
         "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
@@ -119,7 +115,6 @@ export default function WeatherOfTrip(props) {
                     //  if (index <= 6 && index >= 0) {
                     return (
                         <div key={index} className='wrapForecast'>
-
                             <div className='weekDays'> {days[new Date(forecastItem.datetimeEpoch * 1000).getDay()]}</div>
                             <div>
                                 <img className='icons' src={icons[forecastItem.icon]} alt='forecast of sky conditions' />                                 </div>
@@ -130,13 +125,9 @@ export default function WeatherOfTrip(props) {
                             </div>
                         </div>
                     )
-
                 })
                 }
             </div>}
         </div>
     )
-
-
-
 }

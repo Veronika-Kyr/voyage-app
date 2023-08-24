@@ -10,7 +10,6 @@
     border: none;
 }
 
-
 img {
     width: 200px;
     height: 150px;
@@ -40,9 +39,7 @@ p {
 .arrow {
     display: inline-block;
     margin: 70px auto;
-
     text-align: center;
-
 }
 
 .scrollBtn:hover {
@@ -61,4 +58,24 @@ p {
     background: none;
     border: none;
     font-size: 25px;
+}
+
+
+@media(max-width: 800px) {
+    .tripCard {
+        flex-direction: column;
+    }
+
+    .cityCurrentWeather {
+        position: relative;
+        left: 20px;
+        top: 350px;
+        font-size: 20px;
+    }
+
+    .cityWeather {
+        margin: 0;
+    }
+
+
 }

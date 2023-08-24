@@ -15,7 +15,6 @@
     height: 90px;
     margin-top: 10px;
     margin-right: 15px;
-    /* display: inline;*/
 }
 
 .iconWeather {
@@ -38,4 +37,21 @@
 .captionSection {
     display: flex;
     justify-content: space-between;
+}
+
+
+@media(max-width: 800px) {
+    .wrapper {
+        display: grid;
+        width: 80px;
+        margin: 30px auto;
+    }
+
+    .currentTempreture {
+        font-size: 25px;
+    }
+
+    .timer {
+        display: none;
+    }
 }

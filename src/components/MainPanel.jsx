@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/styles/mainPanel.css';
 import CitiesList from './CitiesList';
-import WeatherOfTrip from './WeatherOfTrip';
 
 export default function MainPanel() {
     const [cityTrip, setCityTrip] = useState('');
@@ -25,8 +24,6 @@ export default function MainPanel() {
                 </form>
             </div>
             <CitiesList searchingCity={cityTrip} />
-
-
         </div>
     )
 }

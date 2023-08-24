@@ -1,9 +1,3 @@
-.citiesList {
-    /* display: flex;
-    justify-content: flex-start;
-    gap: 20px;*/
-}
-
 .errorStart,
 .errorEnd {
     color: red;
@@ -63,8 +57,7 @@ label {
     margin-left: 15px;
 }
 
-input,
-select {
+input {
     margin: 8px 20px;
     padding: 8px 5px;
     border-radius: 5px;

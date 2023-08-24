@@ -21,3 +21,14 @@
     width: 45px;
     height: 45px;
 }
+
+@media(max-width: 800px) {
+    .forecastCard {
+        flex-direction: column;
+        width: 100px;
+    }
+
+    .wrapForecast {
+        width: 60px;
+    }
+}

@@ -9,3 +9,19 @@
   background: url("./assets/images/clouds.jpg") no-repeat center/100%;
   color: white;
 }
+
+@media(max-width: 800px) {
+  .app {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+  }
+
+  .mainSection {
+    min-height: 200px;
+  }
+
+  .cityPanel {
+    min-height: 400px;
+  }
+}

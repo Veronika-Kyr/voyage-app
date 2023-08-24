@@ -1,4 +1,4 @@
-import React, { createRef, useState, useMemo } from "react";
+import React, { createRef, useState } from "react";
 import '../assets/styles/citiesList.css';
 import CityCard from './CityCard';
 import card1 from "../assets/images/berlin.jpg";
@@ -50,29 +50,29 @@ const cities = [
 const cit = [
     {
         'cityName': 'Berlin',
-        'datestart': '2023-08-18',
-        'dateend': '2023-08-23',
+        'datestart': '2023-08-26',
+        'dateend': '2023-08-31',
         'refpic': `${card1}`,
         'id': 1
     },
     {
         'cityName': 'Tokyo',
-        'datestart': '2023-08-19',
-        'dateend': '2023-08-26',
+        'datestart': '2023-08-27',
+        'dateend': '2023-08-31',
         'refpic': `${card2}`,
         'id': 2
     },
     {
         'cityName': 'Barcelona',
-        'datestart': '2023-08-22',
-        'dateend': '2023-08-28',
+        'datestart': '2023-09-01',
+        'dateend': '2023-09-09',
         'refpic': `${card3}`,
         'id': 3
     },
     {
         'cityName': 'Kyiv',
-        'datestart': '2023-08-18',
-        'dateend': '2023-08-25',
+        'datestart': '2023-09-02',
+        'dateend': '2023-09-07',
         'refpic': `${card4}`,
         'id': 4
     },
@@ -83,46 +83,13 @@ export default function CitiesList(props) {
     let n = 0;
     const [modalVisibility, setmodalVisibility] = useState(false);
     const [scrollPosition, setscrollPosition] = useState(n);
-    const [clickSubmit, setclickSubmit] = useState(false);
     const [scrolldisabled, setScrolldisabled] = useState(false);
     const [scrollLeftdisabled, setScrollLeftdisabled] = useState(false);
-    //  const [newAdded, setnewAdded] = useState(false);
     const form = createRef();
     const [errorStart, setErrorStart] = useState(false);
     const [errorEnd, setErrorEnd] = useState(false);
     const period = new Date();
-    {/*  const cit = [
-        {
-            'cityName': 'Berlin',
-            'datestart': '2023-08-18',
-            'dateend': '2023-08-23',
-            'refpic': `${card1}`,
-            'id': 1
-        },
-        {
-            'cityName': 'Tokyo',
-            'datestart': '2023-08-19',
-            'dateend': '2023-08-26',
-            'refpic': `${card2}`,
-            'id': 2
-        },
-        {
-            'cityName': 'Barcelona',
-            'datestart': '2023-08-22',
-            'dateend': '2023-08-28',
-            'refpic': `${card3}`,
-            'id': 3
-        },
-        {
-            'cityName': 'Kyiv',
-            'datestart': '2023-08-18',
-            'dateend': '2023-08-25',
-            'refpic': `${card4}`,
-            'id': 4
-        },
-    ];*/}
     let [cityData, setCityData] = useState(cit);
-    console.log(cityData);
 
     const [formState, setFormState] = useState({
         'cityName': '',
@@ -140,7 +107,6 @@ export default function CitiesList(props) {
         if ((scrollPosition + 1) < cityData.length) {
             setscrollPosition(scrollPosition + 1);
             setScrollLeftdisabled(false);
-
         }
         else {
             setScrolldisabled(true);
@@ -170,7 +136,6 @@ export default function CitiesList(props) {
         let enterDate = new Date(event.target.value);
         const diff = Math.abs(enterDate - period);
         const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
-
         if (diffDays >= 15) {
             setErrorStart(true);
         }
@@ -196,15 +161,6 @@ export default function CitiesList(props) {
     function submitData(event) {
         if (!errorStart && !errorEnd) {
             event.preventDefault();
-            setclickSubmit(true);
-
-            // localStorage.setItem('cityName', formState.cityName);
-            //  localStorage.setItem('refpic', formState.refpic);
-            //  localStorage.setItem('id', formState.id);
-            // localStorage.setItem('dateend', formState.dateend);
-            // localStorage.setItem('datestart', formState.datestart);
-
-
             let m = cities.filter(el => el.cityName === formState.cityName);
             formState.refpic = m[0].refpic;
             formState.id = m[0].id;
@@ -214,12 +170,10 @@ export default function CitiesList(props) {
         }
     }
     function closeModal() {
-        setclickSubmit(false);
         setmodalVisibility(false);
     }
 
     function resetData(e) {
-        setclickSubmit(false);
         setErrorStart(false);
         setErrorEnd(false);
         setFormState({
@@ -229,7 +183,6 @@ export default function CitiesList(props) {
             'refpic': '',
             'id': 0
         });
-
         form.current.reset();
     }
 
@@ -279,7 +232,6 @@ export default function CitiesList(props) {
                             <button className="btnReset" type="reset" onClick={resetData}>Cancel</button>
                             <button className="btnSubmit" type="submit" >Save</button>
                         </div>
-
                     </form >
                 </div>
                 }

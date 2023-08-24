@@ -23,10 +23,6 @@ export default function CityCard(props) {
         chosenCity: 'Berlin'
     };
 
-
-
-
-
     return (
         <div className='cityWeather'>
             {props.error && <p>There is no such a trip!</p>}

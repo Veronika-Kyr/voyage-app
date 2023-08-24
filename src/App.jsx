@@ -12,7 +12,6 @@ function App() {
       <div className='cityPanel'>
         <UserLogin />
       </div>
-
     </div>
   )
 }
