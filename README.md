@@ -1,4 +1,4 @@
-React, Redux Toolkit, json server
+Vite + React, Redux Toolkit, json server
 
 Pet project for choosing a trip
 
