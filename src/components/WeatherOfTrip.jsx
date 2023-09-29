@@ -109,7 +109,7 @@ export default function WeatherOfTrip(props) {
 
     return (
         <div className='sectionCards'>
-            <h2 className='headForecast'>Week</h2>
+            <h2 className='headForecast'>Be informed about the weather! 🌞</h2>
             {forecast.fetchStatus === 'success' && <div className='forecastCard'>
                 {forecast.data.days.map((forecastItem, index) => {
                     //  if (index <= 6 && index >= 0) {

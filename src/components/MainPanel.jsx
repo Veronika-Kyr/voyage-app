@@ -13,7 +13,7 @@ export default function MainPanel() {
     return (
         <div className='main'>
             <h1>
-                Weather <b>Forecast</b></h1>
+                Let's find a cool trip!</h1>
             <div className="sectionSearch">
                 <form
                     onSubmit={getCity} >
