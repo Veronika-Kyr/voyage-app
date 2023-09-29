@@ -50,29 +50,29 @@ const cities = [
 const cit = [
     {
         'cityName': 'Berlin',
-        'datestart': '2023-09-15',
-        'dateend': '2023-09-20',
+        'datestart': '2023-10-09',
+        'dateend': '2023-10-13',
         'refpic': `${card1}`,
         'id': 1
     },
     {
         'cityName': 'Tokyo',
-        'datestart': '2023-09-18',
-        'dateend': '2023-09-22',
+        'datestart': '2023-10-03',
+        'dateend': '2023-10-09',
         'refpic': `${card2}`,
         'id': 2
     },
     {
         'cityName': 'Barcelona',
-        'datestart': '2023-09-16',
-        'dateend': '2023-09-21',
+        'datestart': '2023-10-05',
+        'dateend': '2023-10-10',
         'refpic': `${card3}`,
         'id': 3
     },
     {
         'cityName': 'Kyiv',
-        'datestart': '2023-09-17',
-        'dateend': '2023-09-23',
+        'datestart': '2023-10-06',
+        'dateend': '2023-10-11',
         'refpic': `${card4}`,
         'id': 4
     },
